@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Background with Pop-up</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style> bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+/* Centered content box */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+/* Hidden video pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.popup video {
+    width: 100%;
+    max-width: 600px;
+
+.kc {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.jeff video {
+    width: 100%;
+    max-width: 600px;
+}
+.sms {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.sms video {
+    width: 100%;
+    max-width: 600px;
+}
+</style>
+<script>function checkPassword() {
+    var nameInput = document.getElementById('nameInput').value;
+    
+    // Example: If the name is 'John', show the video
+    if (nameInput.toLowerCase() === 'mimic') {
+        document.getElementById('popup').style.display = 'block';
+    }
+   else if (nameInput.toLowerCase() === 'gk') {
+        document.getElementById('kc').style.display = 'block';
+   }
+   else if(nameInput.toLowerCase() === 'kyle') {
+    document.getElementById('sms').style.display = 'block';
+   }
+    else {
+        alert('Incorrect name!');
+    }
+
+}</script>
+    
+</head>
+<body>
+	 <video autoplay muted loop id="bg-video">
+        <source src="https://cdn.pixabay.com/video/2018/08/18/17847-285736490_large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="content">
+        <h1>Enter your name as password</h1>
+        <input type="text" id="nameInput" placeholder="Enter Name">
+        <button onclick="checkPassword(name)">Submit</button>
+    </div>
+
+    <!-- Hidden Video for Pop-up -->
+    <div  id="popup" class="popup">
+        <video autoplay muted loop id="popupVideo">
+            <source src="https://cdn.pixabay.com/video/2021/04/08/70405-534725332_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div  id="kc" class="popup">
+        <video autoplay muted loop id="jeffVideo">
+            <source src="https://cdn.pixabay.com/video/2021/04/08/70405-534725332_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div  id="sms" class="popup"></div>
+        <video autoplay muted loop id="smsVideo">
+            <source src="https://cdn.pixabay.com/video/2021/04/08/70405-534725332_large.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
